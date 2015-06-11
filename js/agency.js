@@ -24,3 +24,19 @@ $('body').scrollspy({
 $('.navbar-collapse ul li a').click(function() {
     $('.navbar-toggle:visible').click();
 });
+
+
+var wall = new freewall(".freewall");
+wall.reset({
+    selector: '.cell',
+    animate: true,
+    cellW: 20,
+    cellH: 200,
+    onResize: function() {
+        wall.fitWidth();
+    }
+});
+wall.fitWidth();
+// for scroll bar appear;
+$(window).trigger("resize");
+		
